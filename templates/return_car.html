@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+
+<div class="container mt-3">
+    
+    <div class="row">
+        
+        <div class="col-md-6">
+            <h5 class="card-title">Provide your information</h5>
+                    <p class="card-text"></p>
+            <div class="card">
+                <div class="container">
+                    <p class="card-text"></p>
+                    <form class="row g-3 needs-validation" novalidate>
+                      <div class="col-md-6">
+                      <label for="validationCustom03" class="form-label">CAR ID</label>
+                      <input type="text" class="form-control" id="validationCustom03" required>
+                    </div>
+                    <div class="col-12">
+                        <a href="{{url_for('ok')}}" class="btn btn-primary" type="submit">Search(ok)</a>
+                        <a href="{{url_for('exceeded')}}" class="btn btn-primary" type="submit">Search(exceeded)</a>
+                    </div>
+                    <p class="card-text"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h5 class="card-title">.</h5>
+            <p class="card-text"></p>
+            <div class="card">
+                <div class="card-body">
+                    <img src="car.jpg" >
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

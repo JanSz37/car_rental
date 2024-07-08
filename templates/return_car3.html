@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return successfull!</title>
+</head>
+<div class="row">
+
+    <div class="col-md-6 mx-auto">
+
+        <div class="card">
+            <div class="container">
+                <div>
+                    <form  method = 'post'>
+                            <p></p>
+                            <h5 class="card-title">{{ message }}</h5>
+                            <a class="btn btn-primary" href="{{url_for('cars')}}">Home</a> <!--thats a placeholder. we simply cant go back cause the whole thing goes to shit haha-->                         
+                            <p></p>
+                        </form>
+
+                </div>
+
+            </div>
+        </div>
+
+           
+           
+    </div>
+
+</div>
+
+
+</html>
+
+{% endblock %}

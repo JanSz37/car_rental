@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Dates</title>
+</head>
+
+<div class="container mt-3" >  
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h5 class="card-title">Provide your information</h5>
+                    <p class="card-text"></p>
+            <div class="card">
+                <div class="container">
+                    <p class="card-text"></p>
+                    <form action="/process_dates" method="post" class="row g-3 needs-validation">
+                        <div class="col-md-6">
+                            <label for="validationCustom01" class="form-label">Start Date</label>
+                            <input type="date" id="start_date" name="start_date" required>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustom02" class="form-label">End Date</label>
+                            <input type="date" id="end_date" name="end_date" required>
+                        </div>
+                        <div class="col-12">
+                            
+                            <input type="hidden" name="entry_id" value="{{ entry_id }}">
+                            <input type="submit" class="btn btn-primary"   value="Submit">
+
+                        </div>
+                            <p></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

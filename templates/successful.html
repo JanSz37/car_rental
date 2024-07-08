@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+
+<div class="container mt-3">
+    
+    <div class="row justify-content-center">
+        
+        <div class="col-md-6">
+            <h5 class="card-title">SUCCESS!</h5>
+                    <p class="card-text"></p>
+            <div class="card">
+                <div class="container">
+                    <p class="card-text"></p>
+                    <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6">
+                      <label for="validationCustom01" class="form-label">You are renting:</label>
+                      <p id="car" class="form-control"> {{ list1[0] }}</p>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="validationCustom02" class="form-label">total (PLN):</label>
+                      <p id="moneyDue" class="form-control"> {{ list1[1]}} </p>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="validationCustom03" class="form-label">Time rented:</label>
+                      <p id="days" class="form-control"> {{list1[2]}}  days</p>
+                    </div>
+                    
+                    <p class="card-text"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}

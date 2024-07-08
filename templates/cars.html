@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ message }}. Choose your car</title>
+</head>
+<body>
+    <h5 class="card-title">Available Cars </h5>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for index, row in cars.iterrows() %}
+                <tr onclick="redirectToForm('{{ row['id'] }}')">
+                    <td>{{ row['id'] }}</td>
+                    <td>{{ row['model'] }}</td>
+                    <td>{{ row['price'] }}</td>
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+</body>
+</html>
+<script>
+    function redirectToForm(id) {
+        window.location.href = "/rent_car/" + id;
+    }
+</script>
+{% endblock %}

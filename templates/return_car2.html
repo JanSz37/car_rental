@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental</title>
+   
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+</head>
+
+<body>
+    {{message}}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <!-- AUTOS TABLE -->
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">MODEL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for index, row in table.iterrows() %}
+                            <tr class="table-row" onclick="redirectToForm('{{ row['id'] }}')">
+                                <td>{{ row['id'] }}</td>
+                                <td>{{ row['model'] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function redirectToForm(id) {
+            window.location.href = "/return_car3/" + id;
+        }
+    </script>
+
+</body>
+
+</html>
+{% endblock %}

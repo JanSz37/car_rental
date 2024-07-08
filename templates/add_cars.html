@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="row">
+
+    <div class="col-md-6">
+
+        <div class="card">
+            <div class="container">
+                <p class="card-text"></p>
+                <form class="row g-3 needs-validation" novalidate>
+                    <p class="card-text"></p>
+                   
+                </form>
+            </div>
+            
+
+            <div class="container">
+               
+            
+
+
+                <div>
+                    <form onsubmit="disableSubmitButton" action="/process_added_cars" method = 'post'>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">ID</span>
+                            <input type="text" id = 'car_id' name = 'car_id' required class="form-control" aria-label="Sizing example input"aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">MODEL</span>
+                            <input type="text" id = 'car_name' name = 'car_name' required class="form-control" aria-label="Sizing example input"aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">PRICE</span>
+                            <input type="text" id = 'car_price' name = 'car_price' required class="form-control" aria-label="Sizing example input"aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        <input type="submit" class="btn btn-primary" value="Submit">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+           
+           
+    </div>
+
+    
+    <div class="col-md-6">
+
+             
+        <table class="table">
+            <thead>
+                <tr>
+                    
+                    <th scope="col">ID</th>
+                    <th scope="col">MODEL</th>
+                    <th scope="col">PRICE</th>
+                </tr>
+                
+            </thead>
+            
+            <tbody>
+                <tr>
+                </tr>
+                {% for index, row in cars1.iterrows() %}
+                    <tr>
+                        <td>{{ row['id'] }}</td>
+                        <td>{{ row['model'] }}</td>
+                        <td>{{ row['price'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            
+        </table>     
+         
+
+    </div>
+    
+</div>
+
+
+{% endblock %}
